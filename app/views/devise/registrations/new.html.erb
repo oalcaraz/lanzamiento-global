@@ -26,8 +26,6 @@
     <div class="row">
       <div class="col-sm-8">
 
-
-        <form id="lgstep-form">
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
           <div class="carousel slide" id="lgstep-container">
@@ -36,23 +34,11 @@
                 <div id="lgstep-step-1">
                   <div class="lgstep-nav" id="lgstep-nav-1">
                     <div class="row">
-                      <div class="col-sm-4">
+                      <div class="col-sm-12">
                         <div class="lgstep-nav-step-1 active">
                           <span class="step-no">1</span>
                           <div class="step-desc">Informaci&oacute;n de Cuenta</div>
                         </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <a class="lgstep-nav-step-2" data-slide-to="1" data-target="#lgstep-container" href="#">
-                          <span class="step-no">2</span>
-                          <div class="step-desc">Direcci&oacute;n de Facturaci&oacute;n</div>                          
-                        </a>
-                      </div>
-                      <div class="col-sm-4">
-                        <a class="lgstep-nav-step-3" data-slide-to="2" data-target="#lgstep-container" href="#">
-                          <span class="step-no">3</span>
-                          <div class="step-desc">Detalles de Facturaci&oacute;n</div>
-                        </a>
                       </div>
                     </div>
                   </div>
@@ -61,13 +47,13 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <%= f.label :firstname, t("Nombre *"), :class => 'sr-only', :for => 'nombre' %>
-                          <%= f.text_field :firstname, :placeholder => 'Nombre *', :class => 'form-control', :id => 'nombre', :name => 'nombre', :required => 'required', :type => 'text' %>
+                          <%= f.text_field :firstname, :placeholder => 'Nombre *', :class => 'form-control', :id => 'nombre', :required => 'required', :type => 'text' %>
                         </div>                        
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <%= f.label :lastname, t("Apellido *"), :class => 'sr-only', :for => 'apellido' %>
-                          <%= f.text_field :lastname, :placeholder => 'Apellido *', :class => 'form-control', :id => 'apellido', :name => 'apellido', :required => 'required', :type => 'text' %>
+                          <%= f.label :lastname, t("Apellido *"), :class => 'sr-only' %>
+                          <%= f.text_field :lastname, :placeholder => 'Apellido *', :class => 'form-control', :id => 'apellido', :required => 'required', :type => 'text' %>
                         </div>                        
                       </div>
                     </div>
@@ -75,29 +61,14 @@
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <%= f.label :username, t("Nombre de Usuario *"), :class => 'sr-only', :for => 'nombre-de-usuario' %>
-                          <%= f.text_field :username, :placeholder => 'Nombre de Usuario *', :class => 'form-control', :id => 'nombre-de-usuario', :name => 'nombre-de-usuario', :required => 'required', :type => 'text' %>
+                          <%= f.label :username, t("Nombre de Usuario *"), :class => 'sr-only' %>
+                          <%= f.text_field :username, :placeholder => 'Nombre de Usuario *', :class => 'form-control', :id => 'nombre-de-usuario', :required => 'required', :type => 'text' %>
                         </div>
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <%= f.label :email, t("Email *"), :class => 'sr-only', :for => 'email-address' %>
-                          <%= f.text_field :email, :placeholder => 'Email *', :class => 'form-control', :id => 'email-address', :name => 'email-address', :required => 'required', :type => 'text' %>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <%= f.label :password, t("Elige tu Contraseña *"), :class => 'sr-only', :for => 'elige-tu-contrasena' %>
-                          <%= f.text_field :password, :placeholder => 'Elige tu Contraseña *', :class => 'form-control', :id => 'elige-tu-contrasena', :name => 'elige-tu-contrasena', :required => 'required', :type => 'text', autocomplete: "off" %>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <%= f.label :password, t("Confirma tu Contraseña *"), :class => 'sr-only', :for => 'confirma-tu-contrasena' %>
-                          <%= f.text_field :password, :placeholder => 'Confirma tu Contraseña *', :class => 'form-control', :id => 'confirma-tu-contrasena', :name => 'confirma-tu-contrasena', :required => 'required', :type => 'text', autocomplete: "off" %>
+                          <%= f.label :email, t("Email *"), :class => 'sr-only' %>
+                          <%= f.email_field :email, :placeholder => 'Email *', :class => 'form-control', :id => 'email-address' %>
                         </div>
                       </div>
                     </div>
@@ -105,20 +76,30 @@
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <%= f.label :email, t("Teléfono *"), :class => 'sr-only', :for => 'telefono' %>
-                          <%= f.text_field :email, :placeholder => 'Teléfono *', :class => 'form-control', :id => 'telefono', :name => 'telefono', :required => 'required', :type => 'text' %>
+                          <%= f.label :password, t("Elige tu Contraseña *"), :class => 'sr-only' %>
+                          <%= f.password_field :password, :placeholder => 'Elige tu Contraseña *', :class => 'form-control', :id => 'elige-tu-contrasena', :required => 'required', autocomplete: "off" %>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <%= f.label :password, t("Confirma tu Contraseña *"), :class => 'sr-only' %>
+                          <%= f.password_field :password, :placeholder => 'Confirma tu Contraseña *', :class => 'form-control', :id => 'confirma-tu-contrasena', :required => 'required', autocomplete: "off" %>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <%= f.label :phone, t("Teléfono *"), :class => 'sr-only' %>
+                          <%= f.text_field :phone, :placeholder => 'Teléfono *', :class => 'form-control', :id => 'telefono', :required => 'required', :type => 'text' %>
                         </div>
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="nivel-de-compromiso" class="sr-only">Nivel de Compromiso *</label>
-                          <select class="form-control" id="nivel-de-compromiso" name="nivel-de-compromiso" required="required">
+                          <select class="form-control" id="nivel-de-compromiso" name="nivel-de-compromiso">
                             <option value="">--Elige Tu Nivel de Compromiso--</option>
-                            <?php $selected_product_id = (isset($_GET['product-id']) && trim($_GET['product-id']) != '' ? trim($_GET['product-id']) : ''); ?>
-                            <?php $plans = array('001' => 'Basico', '002' => 'Profesional', '003' => 'Artista'); ?>
-                            <?php foreach($plans as $id => $val): ?>
-                              <option value="<?php echo $id; ?>" <?php echo ($selected_product_id == $id ? 'selected="selected"' : ''); ?>><?php echo $val; ?></option>
-                            <?php endforeach; ?>
                           </select>
                         </div>
                       </div>
@@ -127,210 +108,8 @@
                     <div class="row">
                       <div class="col-sm-6 col-sm-offset-6">
                         <div class="continue-container">
-                          <a class="btn btn-lg btn-block btn-success"
-                          data-slide-to="1" data-target="#lgstep-container" href="#" id="btn-continue-to-step-2">VE AL PASO 2 &rarr;</a>
+                          <div><%= f.submit "Sign up" %></div>
                         </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div id="lgstep-step-2">
-                  <div class="lgstep-nav" id="lgstep-nav-2">
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <a class="lgstep-nav-step-1" data-slide-to="0" data-target="#lgstep-container" href="#">
-                          <span class="step-no">1</span>
-                          <div class="step-desc">Informaci&oacute;n de Cuenta</div>
-                        </a>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="lgstep-nav-step-2 active">
-                          <span class="step-no">2</span>
-                          <div class="step-desc">
-                            Direcci&oacute;n de Facturaci&oacute;n
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <a class="lgstep-nav-step-3" data-slide-to="2" data-target="#lgstep-container" href="#">
-                          <span class="step-no">3</span>
-                          <div class="step-desc">Detalles de Facturaci&oacute;n</div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-elements">
-
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label for="pais" class="sr-only">Pa&iacute;s *</label>
-                          <select class="form-control" id="pais" name="pais"
-                          required="required">
-                            <option value="">Elige el país *</option>
-                            <option value="Estados Unidos">Estados Unidos</option>
-                            <option value="Mexico">Mexico</option>
-                            <option value="Puerto Rico">Puerto Rico</option>
-                            <option value="Peru">Peru</option>
-                            <option value="Ecuador">Ecuador</option>
-                            <option value="España">España</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label for="direccion" class="sr-only">Direccíon *</label>
-                          <input placeholder="Direccíon *" class="form-control" id="direccion"name="direccion" required="required" type="text">
-                        </div>                        
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label for="ciudad" class="sr-only">Ciudad *</label>
-                          <input placeholder="Ciudad *" class="form-control" id="ciudad" required="required" type="text">
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label for="estado" class="sr-only">Estado *</label>
-                          <input placeholder="Estado *" class="form-control" id="estado" name="estado" required="required" type="text">
-                        </div>                        
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label for="codigo-postal" class="sr-only">C&oacute;digo Postal</label>
-                          <input placeholder="C&oacute;digo Postal" class="form-control" id="codigo-postal" name="codigo-postal" type="text">
-                        </div>
-                      </div>
-                    </div>
-                    <p class="error-container-step-2" style="display:none;"></p>
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="goback-container">
-                          <a class="btn btn-lg btn-block btn-success"
-                          data-slide-to="0" data-target="#lgstep-container" href="#" id="btn-goback-to-step-1">&larr; VE AL PASO 1</a>
-                        </div>                        
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="continue-container">
-                          <a class="btn btn-lg btn-block btn-success"
-                          data-slide-to="2" data-target="#lgstep-container" href="#" id="btn-continue-to-step-3">VE AL PASO 3 &rarr;</a>
-                        </div>                        
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div id="lgstep-step-3">
-                  <div class="lgstep-nav" id="lgstep-nav-3">
-
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <a class="lgstep-nav-step-1" data-slide-to="0" data-target="#lgstep-container" href="#">
-                          <span class="step-no">1</span>
-                          <div class="step-desc">Informaci&oacute;n de Cuenta</div>
-                        </a>
-                      </div>
-                      <div class="col-sm-4">
-                        <a class="lgstep-nav-step-2" data-slide-to="1" data-target="#lgstep-container" href="#">
-                          <span class="step-no">2</span>
-                          <div class="step-desc">Direcci&oacute;n de Facturaci&oacute;n</div>
-                        </a>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="lgstep-nav-step-3 active">
-                          <span class="step-no">3</span>
-                          <div class="step-desc">
-                            Detalles de Facturaci&oacute;n
-                          </div>
-                        </div>
-                      </div>im
-                    </div>
-                  </div>
-                  <div class="form-elements">
-
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label for="numero-de-tarjeta">N&uacute;mero de Tarjeta *</label>
-                          <input class="form-control" id="numero-de-tarjeta" name="numero-de-tarjeta" required="required" type="text">
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <label for="expiracion-mes">Fecha de Expiraci&oacute;n *</label>
-                        <div class="row">
-                          <div class="col-xs-6">
-                            <div class="form-group">
-                              <select class="form-control" id=
-                              "expiracion-mes" name="expiracion-mes">
-                                <option value="01">01</option>
-                                <option value="02">02</option>
-                                <option value="03">03</option>
-                                <option value="04">04</option>
-                                <option value="05">05</option>
-                                <option value="06">06</option>
-                                <option value="07">07</option>
-                                <option value="08">08</option>
-                                <option value="09">09</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="col-xs-6">
-                            <div class="form-group">
-                              <select class="form-control" id="expiracion-ano" name="expiracion-ano">
-                                <option value="2014">2014</option>
-                                <option value="2015">2015</option>
-                                <option value="2016">2016</option>
-                                <option value="2017">2017</option>
-                                <option value="2018">2018</option>
-                                <option value="2019">2019</option>
-                                <option value="2020">2020</option>
-                                <option value="2021">2021</option>
-                                <option value="2022">2022</option>
-                                <option value="2023">2023</option>
-                                <option value="2024">2024</option>
-                                <option value="2025">2025</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                          
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label for="cvv">Código de Seguridad CVV *</label>
-                          <input class=
-                          "form-control" id="cvv" name="cvv" required=
-                          "required" type="text">
-                          <div id="cvv-ask-container">
-                            <span class="cvv-ask" data-target="#cvv-modal"
-                            data-toggle="modal">&iquest;qu&eacute; es esto?</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-6 col-sm-offset-3" style="margin-top: 30px;">
-                        <div class="crea-container">
-                          <%= f.submit "Sign up" %>
-                          <small>Al hacer clic en “Crear Cuenta” usted esta aceptando los <a href="terms-and-conditions.html">Términos y Condiciones</a>, <a href="terms-and-conditions.html#privacy-policy">Política de Privacidad</a> y <a href="terms-and-conditions.html#refund-policy">Politica de Reembolso</a>.</small>
-                        </div>                        
                       </div>
                     </div>
                   </div>
@@ -339,7 +118,6 @@
             </div>
           </div>
           <% end %>
-        </form>
         <div class="modal fade" id="cvv-modal" tabindex="-1">
           <div class="modal-dialog">
             <div class="modal-content">
