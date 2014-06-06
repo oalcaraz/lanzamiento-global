@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="es-ES">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Lanzamiento Global</title>
+  <meta content="noodp, noydir" name="robots">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" media="all" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,300,700" media="all" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" media="all" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Bitter:400,700" media="all" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,600,800" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet" type="text/css">
+  <%= stylesheet_link_tag "home", media: "all" %>
+  <!--[if gte IE 9]>
+    <style type="text/css">
+      .gradient {
+         filter: none;
+      }
+    </style>
+  <![endif]-->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="landing-med template-custom">
+  <%= yield %>
+  <%= javascript_include_tag "application" %>
+</body>
+</html>
