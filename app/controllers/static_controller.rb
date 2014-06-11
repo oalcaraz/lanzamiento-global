@@ -1,7 +1,9 @@
 class StaticController < ApplicationController
-	def home
-	end
+  def home
+    render layout: 'home'
+  end
 
-	def terms_conditions
-	end
+  def terms_conditions
+    render layout: 'home'
+  end
 end

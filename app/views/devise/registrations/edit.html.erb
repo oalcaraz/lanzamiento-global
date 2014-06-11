@@ -1,44 +1,338 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+  
+  <!-- Main Container Fluid -->
+  <div class="container-fluid menu-hidden">
+        
+    <!-- Content -->
+    <div id="content">
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+      <div class="navbar hidden-print main navbar-default" role="navigation">
+  <div class="user-action user-action-btn-navbar pull-right">
+    <button class="btn btn-sm btn-navbar btn-inverse btn-stroke hidden-lg hidden-md"><i class="fa fa-bars fa-2x"></i></button>
+  </div>
+  <a href="index.html" class="logo">
+    <img src="../assets/images/logo/logo.jpg" width="32" alt="SMART" />
+    <span class="hidden-xs hidden-sm inline-block"><span>mosaic</span>pro</span>
+  </a>
+  <ul class="main pull-left hidden-xs ">
+    <li class="dropdown notif notifications hidden-xs">
+      <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <span class="badge badge-danger">5</span></a>
+      <ul class="dropdown-menu chat media-list">
+        <li class="media">
+              <a class="pull-left" href="#"><img class="media-object thumb" src="../assets/images/people/100/15.jpg" alt="50x50" width="50" /></a>
+          <div class="media-body">
+                <span class="label label-default pull-right">5 min</span>
+                  <h5 class="media-heading hidden-xs">Adrian D.</h5>
+                  <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+        </li>
+            <li class="media">
+                <a class="pull-left" href="#"><img class="media-object thumb" src="../assets/images/people/100/16.jpg" alt="50x50" width="50" /></a>
+          <div class="media-body">
+                  <span class="label label-default pull-right">2 days</span>
+                  <h5 class="media-heading">Jane B.</h5>
+                  <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+            </li>
+          <li class="media">
+                <a class="pull-left" href="#"><img class="media-object thumb" src="../assets/images/people/100/17.jpg" alt="50x50" width="50" /></a>
+              <div class="media-body">
+            <span class="label label-default pull-right">3 days</span>
+                  <h5 class="media-heading">Andrew M.</h5>
+                  <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+            </li>
+            <li><a href="#" class="btn btn-primary"><i class="fa fa-list"></i> <span>View all messages</span></a></li>
+          </ul>
+    </li>
+    <li class="notifications">
+      <a href="user/projects.html"><i class="fa fa-clock-o"></i> <span class="badge badge-warning">7</span></a>
+    </li>
+    <li class="notifications">
+      <a href="user.html" ><i class="fa fa-user"></i> <span class="badge badge-info">2</span></a>
+    </li>
+  </ul>
+  <ul class="main pull-right">
+    <li class="hidden-xs hidden-sm"><a href="#modal-task" class="btn btn-info" data-toggle="modal">Create Task  <i class="fa fa-fw icon-compose"></i></a></li>
+    <li class="hidden-xs">Completed Tasks:  <strong class="text-primary">24</strong></li>
+    <li class="dropdown username hidden-xs ">
+      <a href="" class="dropdown-toggle" data-toggle="dropdown"><img src="../assets/images/people/35/22.jpg" class="img-circle" alt="Profile" /> Adrian D. <span class="caret"></span></a>
 
-  <div><%= f.label :username %><br />
-  <%= f.text_field :username %></div>
+      <ul class="dropdown-menu pull-right">
+        <li class="active"><a href="user.html" class="glyphicons user"><i></i> Account</a></li>
+        <li><a href="user/messages.html" class="glyphicons envelope"><i></i>Messages</a></li>
+        <li><a href="user/projects.html" class="glyphicons settings"><i></i>Projects</a></li>
+        <li><a href="login.html" class="glyphicons lock no-ajaxify"><i></i>Logout</a></li>
+        </ul>
+    </li>
+  </ul> 
+</div>
+<!-- // END navbar -->
 
-  <div><%= f.label :firstname %><br />
-  <%= f.text_field :firstname %></div>
 
-  <div><%= f.label :lastname %><br />
-  <%= f.text_field :lastname %></div>
 
-  <div><%= f.label :address %><br />
-  <%= f.text_field :address %></div>
 
-  <div><%= f.label :phone %><br />
-  <%= f.text_field :phone %></div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+<div class="innerLR">
+    <div class="innerT">
+        <div class="pull-right">
+            <a class="btn btn-inverse"><i class="fa fa-envelope"></i> Send Message</a>
+            <a class="btn btn-default filled"><i class="fa fa-download"></i></a>
+        </div>
+        <div class="media">
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+            <img src="../assets/images/people/80/22.jpg" class="pull-left thumbnail" alt="Profile" />
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+            <div class="media-body innerAll half">
+                <h3>
+                    <a href="#" class="text-regular ">Adrian Demian</a> <span class="lead text-muted">@short-url</span>
+                </h3>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %></div>
+                <a class="btn btn-default filled text-muted-dark" href="#">Logout <i class="fa fa-sign-out fa-fw"></i></a>
+            </div>
+        </div>
+    </div>
 
-  <div><%= f.submit "Update" %></div>
-<% end %>
+    <div class="widget widget-tabs-content widget-tabs-responsive widget-none">
 
-<h3>Cancel my account</h3>
+        <!-- Tabs Heading -->
+<div class="widget-head bg-background text-center">
+    <ul>
+        <li class="active">
+            <a class="glyphicons lock" href="user.html">
+                <i></i>Account Details
+            </a>
+        </li>
+        <li>
+            <a class="glyphicons clock" href="user/projects.html">
+                <i></i>Projects &amp; Tasks
+            </a>
+        </li>
+        <li>
+            <a class="glyphicons envelope" href="user/messages.html">
+                <i></i>Messages
+            </a>
+        </li>
+        <li>
+            <a class="glyphicons share_alt" href="user/history.html">
+                <i></i>History Log
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- // Tabs Heading END -->
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<div class="widget-body">
 
-<%= link_to "Back", :back %>
+    <div class="row innerAll inner-2x">
+        <div class="col-sm-6">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= devise_error_messages! %>
+                <div class="form-group">
+                    <%= f.label :firstname %>
+                     <%= f.text_field :firstname, :id => 'lastname', :class => 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :lastname %>
+                     <%= f.text_field :lastname, :id => 'lastname', :class => 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :username %>
+                     <%= f.text_field :username, :id => 'username', :class => 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :phone %>
+                    <%= f.text_field :phone, :id => 'phone', :class => 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :email %>
+                    <%= f.email_field :email, :id => 'email', :class => 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :address %>
+                     <%= f.text_field :address, :id => 'address', :class => 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+                    <%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :password_confirmation %>
+                    <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+                    <%= f.password_field :current_password, autocomplete: "off", :class => 'form-control' %>
+                </div>
+
+                <div class="checkbox">
+                    <label for="notify">
+                        <input id="notify" checked="checked" name="notify" type="checkbox">
+                        Email me with updates about current projects.
+                    </label>
+                </div>
+
+                <div class="separator"></div>
+                  <div class="form-group">
+                    <%= f.submit "Update", :class => 'btn btn-primary' %>
+                  </div>
+            <% end %>
+        </div>
+        <div class="col-sm-6">
+            <div class="well">
+                <h4>Additional Information</h4>
+                <div class="separator"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias aspernatur assumenda at commodi dolorem eos eum exercitationem facere ipsum mollitia nemo perspiciatis quaerat qui quidem, quod repellat repudiandae sed veritatis voluptate? Eos necessitatibus non rem repudiandae similique vero voluptatem?</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+    </div>
+
+</div>
+
+
+<!-- CREATE TASK MODAL -->
+<!-- Modal -->
+<div class="modal fade" id="modal-task">
+
+    <div class="modal-dialog">
+        <div class="modal-content bg-white">
+            <!-- Modal body -->
+            <div class="modal-body padding-none ">
+
+                <form class="form-horizontal " role="form">
+
+                        <div class="innerLR innerT">
+                            <div class="form-group">
+                                <label for="to" class="col-sm-2 control-label">Task:</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="to">
+                                        <div class="input-group-btn">
+                                            <button type="button" data-toggle="collapse" data-target="#cc" class="btn btn-default">Schedule <span class="caret"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="cc" class="collapse">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Starts:</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group date datepicker2">
+    <input class="form-control" type="text" value="14 February 2013" />
+    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+</div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Ends:</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group date datepicker2">
+    <input class="form-control" type="text" value="14 February 2013" />
+    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Milestone:</label>
+                                <div class="col-sm-6">
+                                    <select class="selectpicker">
+                                        <option>HTML Validation</option>
+                                        <option>User Interface Design</option>
+                                        <option>Update Bootstrap 3.2</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Project:</label>
+                                <div class="col-sm-6">
+                                    <select class="selectpicker">
+                                        <option>Project #1</option>
+                                        <option>Project #2</option>
+                                        <option>Project #3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+
+                    <div class="innerAll bg-white">
+                        <textarea class="notebook border-none form-control padding-none" rows="4" placeholder="Task description..."></textarea>
+                        <div class="clearfix"></div>
+                    </div>
+                </form>
+
+            </div>
+            <!-- // Modal body END -->
+
+            <div class="innerLR innerB text-right">
+                <a href="" class="btn btn-default"><i class="fa fa-times"></i> Cancel</a>
+                <a href="" class="btn btn-primary"><i class="fa  fa-check"></i> Submit</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!-- // Modal END -->
+
+
+
+
+<!-- // END MODAL -->
+
+    
+    </div>
+    <!-- // Content END -->
+    
+    <div class="clearfix"></div>
+    <!-- // Sidebar menu & content wrapper END -->
+    
+    <div id="footer" class="hidden-print">
+      
+      <!--  Copyright Line -->
+      <div class="copy">&copy; 2012 - 2014 - <a href="http://www.mosaicpro.biz">MosaicPro</a> - All Rights Reserved. <a href="http://themeforest.net/?ref=mosaicpro" target="_blank">Purchase SMART on ThemeForest</a> - Current version: v1.0.0-rc1 / <a target="_blank" href="../assets/../../CHANGELOG.txt?v=v1.0.0-rc1">changelog</a></div>
+      <!--  End Copyright Line -->
+  
+    </div>
+    
+    <!-- // Footer END -->
+    
+  </div>
+  <!-- // Main Container Fluid END -->
+  
+
+    <!-- Global -->
+    <script data-id="App.Config">
+        var App = {};        var basePath = '',
+            commonPath = '../assets/',
+            rootPath = '../',
+            DEV = false,
+            componentsPath = '../assets/components/';
+
+        var primaryColor = '#c72a25',
+            dangerColor = '#b55151',
+            successColor = '#609450',
+            infoColor = '#4a8bc2',
+            warningColor = '#ab7a4b',
+            inverseColor = '#45484d';
+
+        var themerPrimaryColor = primaryColor;
+
+            </script>

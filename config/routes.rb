@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   get '/terms_conditions' => 'static#terms_conditions', as: :terms_conditions
 
   devise_scope :account do
-    get '/:current_user' => 'devise/registrations#new', as: :register 
+    get '/:username' => 'static#home', as: :user_landing
+    get '/:username/register/:plan' => 'registrations#new', as: :new_account_registration
+    get '/:username/register' => 'registrations#new', as: :registration
+    post '/account/register' => 'devise/registrations#create', as: :account_registration
   end
   
   devise_for :admin_users, ActiveAdmin::Devise.config

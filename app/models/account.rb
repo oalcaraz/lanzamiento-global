@@ -5,6 +5,8 @@ class Account < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable#, :trackable
 
+  belongs_to :plan
+  belongs_to :refer, :class_name => 'Account'
 
   validates :username, presence: true
   validates :username, length: { in: 3..20 }

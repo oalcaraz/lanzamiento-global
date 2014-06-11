@@ -11,4 +11,5 @@
  *= require_self
  *= require bootstrap.min.css
  *= require style.css
- *= require style-dev.min.css
+ *= require style-home.css
+ */
