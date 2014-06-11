@@ -101,8 +101,8 @@ Geneologia:
         
         <!-- Category Listing -->
                         <div class="bg-gray-hover overflow-hidden">
-          <div class="row innerAll half  border-bottom">>
-
+          <div class="row innerAll half  border-bottom">
+          <%= @parent.to_yaml %>
           </div>
         </div>
                 <div class="bg-gray-hover overflow-hidden">
@@ -123,7 +123,7 @@ Geneologia:
         <!-- Category Heading -->
                 <div class="widget-head">
           <a href="#" class="btn btn-xs strong btn-inverse pull-right"><i class="fa fa-plus fa-fw"></i> New Thread</a>
-          <h4 class="margin-none">Customization</h4>
+          <h4 class="margin-none">Hijos</h4>
           <div class="clearfix"></div>
         </div>
         <!-- End Category Heading -->
@@ -131,122 +131,17 @@ Geneologia:
         <!-- Category Listing -->
                         <div class="bg-gray-hover overflow-hidden">
           <div class="row innerAll half  border-bottom">
-            <div class="col-sm-6 col-xs-9">
-              <ul class="media-list margin-none">
-                <li class="media">
-                    <a class="pull-left innerAll half hidden-xs" href="#">
-                      <span class="empty-photo"><i class="fa fa-folder-o fa-2x text-faded innerT half"></i></span>
-                    </a>
-                    <div class="media-body">
-                      <div class="innerAll half">
-                        <h3 class="margin-none"><a href="" class="strong text-regular">Board</a></h3>
-                        <div class="clearfix"></div>
-                        <span class="margin-none text-muted-dark">Topic information goes here</span> 
-                      </div>
-                    
-                    </div>
-                </li>
-              </ul>
-            </div>
-            <div class="col-sm-3 col-xs-3">
-              <div class="text-center pull-right innerT innerR half">
-                <p class="strong padding-none margin-none">101</p>
-                <span class="text-muted">posts</span>
-              </div>
-            </div>
-            <div class="col-sm-3 hidden-xs ">
-              <div class="innerAll half pull-right ">
-                <div class="media ">
-                  <a href="" class="pull-left">
-                    <img src="../assets/images/people/50/2.jpg" class="media-object img-circle" alt="people" />
-                  </a>
-                  <div class="media-body innerT half">
-                    <a href="">mosaicpro</a>
-                    <small class="display-block text-muted-dark">5 hrs ago</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <%= @children.to_yaml %>
           </div>
         </div>
                 <div class="bg-gray-hover overflow-hidden">
           <div class="row innerAll half  border-bottom">
-            <div class="col-sm-6 col-xs-9">
-              <ul class="media-list margin-none">
-                <li class="media">
-                    <a class="pull-left innerAll half hidden-xs" href="#">
-                      <span class="empty-photo"><i class="fa fa-folder-o fa-2x text-faded innerT half"></i></span>
-                    </a>
-                    <div class="media-body">
-                      <div class="innerAll half">
-                        <h3 class="margin-none"><a href="" class="strong text-regular">Coral Admin Template</a></h3>
-                        <div class="clearfix"></div>
-                        <span class="margin-none text-muted-dark">Topic information goes here</span> 
-                      </div>
-                    
-                    </div>
-                </li>
-              </ul>
-            </div>
-            <div class="col-sm-3 col-xs-3">
-              <div class="text-center pull-right innerT innerR half">
-                <p class="strong padding-none margin-none">212</p>
-                <span class="text-muted">posts</span>
-              </div>
-            </div>
-            <div class="col-sm-3 hidden-xs ">
-              <div class="innerAll half pull-right ">
-                <div class="media ">
-                  <a href="" class="pull-left">
-                    <img src="../assets/images/people/50/3.jpg" class="media-object img-circle" alt="people" />
-                  </a>
-                  <div class="media-body innerT half">
-                    <a href="">mosaicpro</a>
-                    <small class="display-block text-muted-dark">5 hrs ago</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
                 <div class="bg-gray-hover overflow-hidden">
           <div class="row innerAll half  ">
-            <div class="col-sm-6 col-xs-9">
-              <ul class="media-list margin-none">
-                <li class="media">
-                    <a class="pull-left innerAll half hidden-xs" href="#">
-                      <span class="empty-photo"><i class="fa fa-folder-o fa-2x text-faded innerT half"></i></span>
-                    </a>
-                    <div class="media-body">
-                      <div class="innerAll half">
-                        <h3 class="margin-none"><a href="" class="strong text-regular">Social Network Template</a></h3>
-                        <div class="clearfix"></div>
-                        <span class="margin-none text-muted-dark">Topic information goes here</span> 
-                      </div>
-                    
-                    </div>
-                </li>
-              </ul>
-            </div>
-            <div class="col-sm-3 col-xs-3">
-              <div class="text-center pull-right innerT innerR half">
-                <p class="strong padding-none margin-none">323</p>
-                <span class="text-muted">posts</span>
-              </div>
-            </div>
-            <div class="col-sm-3 hidden-xs ">
-              <div class="innerAll half pull-right ">
-                <div class="media ">
-                  <a href="" class="pull-left">
-                    <img src="../assets/images/people/50/4.jpg" class="media-object img-circle" alt="people" />
-                  </a>
-                  <div class="media-body innerT half">
-                    <a href="">mosaicpro</a>
-                    <small class="display-block text-muted-dark">5 hrs ago</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+          
           </div>
         </div>
                 <!-- // END Category Listing -->
