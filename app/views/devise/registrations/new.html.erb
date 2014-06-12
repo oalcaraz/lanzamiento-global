@@ -1,115 +1,90 @@
-<body class="landing-med template-custom">
-  <div id="med-top-filler">
-    <div class="container">
-      <ul class="pull-right top-nav nav nav-pills">
-        <li><a href="http://www.lanzamientoglobal.com/plexum.php">Ingresar</a></li>
-        <li><a href="contactanos.php">Cont&aacute;ctanos</a></li>
-      </ul>      
-    </div>    
-  </div>
-  <div id="med-navbar">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <a class="med-brand" href="http://lanzamientoglobal.com/">Lanzamiento Global</a>
-        </div>
-        <div class="col-sm-8">
-          <h4 id="descuento-valido-hasta">Descuento valido hasta la media noche de hoy</h4>
-          <div class="countdown">
-            <div id="midnight-countdown"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container" id="med-primary">
-    <div class="row">
-      <div class="col-sm-8">
+<div class="container" id="med-primary">
+  <div class="row">
+    <div class="col-sm-8">
 
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
-          <%= f.hidden_field :refer_id %>
-          <div class="carousel slide" id="lgstep-container">
-            <div class="carousel-inner">
-              <div class="item active">
-                <div id="lgstep-step-1">
-                  <div class="lgstep-nav" id="lgstep-nav-1">
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="lgstep-nav-step-1 active">
-                          <span class="step-no">1</span>
-                          <div class="step-desc">Informaci&oacute;n de Cuenta</div>
-                        </div>
+      <%= form_for(resource, as: resource_name, url: account_registration_path) do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.hidden_field :refer_id %>
+        <div class="carousel slide" id="lgstep-container">
+          <div class="carousel-inner">
+            <div class="item active">
+              <div id="lgstep-step-1">
+                <div class="lgstep-nav" id="lgstep-nav-1">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="lgstep-nav-step-1 active">
+                        <span class="step-no">1</span>
+                        <div class="step-desc">Informaci&oacute;n de Cuenta</div>
                       </div>
                     </div>
                   </div>
-                  <div class="form-elements">
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <%= f.label :firstname, 'Nombre *', :class => 'sr-only' %>
-                          <%= f.text_field :firstname, :placeholder => 'Nombre *', :class => 'form-control', :id => 'nombre' %>
-                        </div>                        
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <%= f.label :lastname, "Apellido *", :class => 'sr-only' %>
-                          <%= f.text_field :lastname, :placeholder => 'Apellido *', :class => 'form-control', :id => 'apellido', :required => 'required' %>
-                        </div>                        
+                </div>
+                <div class="form-elements">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <%= f.label :firstname, 'Nombre *', :class => 'sr-only' %>
+                        <%= f.text_field :firstname, :placeholder => 'Nombre *', :class => 'form-control', :id => 'nombre' %>
+                      </div>                        
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <%= f.label :lastname, "Apellido *", :class => 'sr-only' %>
+                        <%= f.text_field :lastname, :placeholder => 'Apellido *', :class => 'form-control', :id => 'apellido', :required => 'required' %>
+                      </div>                        
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <%= f.label :username, "Nombre de Usuario *", :class => 'sr-only' %>
+                        <%= f.text_field :username, :placeholder => 'Nombre de Usuario *', :class => 'form-control', :id => 'nombre-de-usuario', :required => 'required' %>
                       </div>
                     </div>
-
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <%= f.label :username, "Nombre de Usuario *", :class => 'sr-only' %>
-                          <%= f.text_field :username, :placeholder => 'Nombre de Usuario *', :class => 'form-control', :id => 'nombre-de-usuario', :required => 'required' %>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <%= f.label :email, "Email *", :class => 'sr-only' %>
-                          <%= f.email_field :email, :placeholder => 'Email *', :class => 'form-control', :id => 'email-address' %>
-                        </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <%= f.label :email, "Email *", :class => 'sr-only' %>
+                        <%= f.email_field :email, :placeholder => 'Email *', :class => 'form-control', :id => 'email-address' %>
                       </div>
                     </div>
+                  </div>
 
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <%= f.label :password, "Elige tu Contraseña *", :class => 'sr-only' %>
-                          <%= f.password_field :password, :placeholder => 'Elige tu Contraseña *', :class => 'form-control', :id => 'elige-tu-contrasena', :required => 'required', autocomplete: "off" %>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <%= f.label :password, "Confirma tu Contraseña *", :class => 'sr-only' %>
-                          <%= f.password_field :password, :placeholder => 'Confirma tu Contraseña *', :class => 'form-control', :id => 'confirma-tu-contrasena', :required => 'required', autocomplete: "off" %>
-                        </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <%= f.label :password, "Elige tu Contraseña *", :class => 'sr-only' %>
+                        <%= f.password_field :password, :placeholder => 'Elige tu Contraseña *', :class => 'form-control', :id => 'elige-tu-contrasena', :required => 'required', autocomplete: "off" %>
                       </div>
                     </div>
-
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <%= f.label :phone, "Teléfono *", :class => 'sr-only' %>
-                          <%= f.text_field :phone, :placeholder => 'Teléfono *', :class => 'form-control', :id => 'telefono', :required => 'required' %>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <%= f.label :plan_id, "Elige tu Plan", :class => 'sr-only' %>
-                          <%= f.collection_select :plan_id, Plan.all, :id, lambda {|x| "#{x.name} ($#{x.price})" } %>
-                        </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <%= f.label :password, "Confirma tu Contraseña *", :class => 'sr-only' %>
+                        <%= f.password_field :password, :placeholder => 'Confirma tu Contraseña *', :class => 'form-control', :id => 'confirma-tu-contrasena', :required => 'required', autocomplete: "off" %>
                       </div>
                     </div>
+                  </div>
 
-                    <p class="error-container-step-1" style="display:none;"></p>
-                    <div class="row">
-                      <div class="col-sm-6 col-sm-offset-6">
-                        <div class="continue-container">
-                          <div><%= f.submit "Sign up" %></div>
-                        </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <%= f.label :phone, "Teléfono *", :class => 'sr-only' %>
+                        <%= f.text_field :phone, :placeholder => 'Teléfono *', :class => 'form-control', :id => 'telefono', :required => 'required' %>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <%= f.label :plan_id, "Elige tu Plan", :class => 'sr-only' %>
+                        <%= f.collection_select :plan_id, Plan.all, :id, lambda {|x| "#{t x.name} ($#{x.price})" } %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="error-container-step-1" style="display:none;"></p>
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-6">
+                      <div class="continue-container">
+                        <div><%= f.submit "Sign up" %></div>
                       </div>
                     </div>
                   </div>
@@ -117,55 +92,51 @@
               </div>
             </div>
           </div>
-          <% end %>
-        <div class="modal fade" id="cvv-modal" tabindex="-1">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button class="close" data-dismiss="modal" type=
-                "button">×</button>
-                <h4 class="modal-title" id="cvv-modal-label">Código de Seguridad</h4>
-              </div>
-              <div class="modal-body">
-                <iframe src="http://www.cvvnumber.com/cvv.html"></iframe>
-              </div>
+        </div>
+        
+      <% end %>
+      
+      <div class="modal fade" id="cvv-modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" data-dismiss="modal" type=
+              "button">×</button>
+              <h4 class="modal-title" id="cvv-modal-label">Código de Seguridad</h4>
+            </div>
+            <div class="modal-body">
+              <iframe src="http://www.cvvnumber.com/cvv.html"></iframe>
             </div>
           </div>
         </div>
-
-
-
-
       </div>
-      <div class="col-sm-4">
-        <div class="bonos-wrap">
-          <h2 class="text-center">BONOS</h2>
-          <ul class="bonos-items">
-            <li class="bonos">
-              <p>Posicionamiento en RicoLife Global (incalculable) Tienes la oportunidad de estar al principio de algo grande.</p>
-            </li>
-            <li class="bonos">
-              <p>Cómo Ganar Mi Primer Millón de Dólares en MLM en 18 Meses</p>
-            </li>
-            <li class="bonos">
-              <p>25% de comisiones de cada venta que refieras.</p>
-            </li>
-          </ul>          
-        </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="bonos-wrap">
+        <h2 class="text-center">BONOS</h2>
+        <ul class="bonos-items">
+          <li class="bonos">
+            <p>Posicionamiento en RicoLife Global (incalculable) Tienes la oportunidad de estar al principio de algo grande.</p>
+          </li>
+          <li class="bonos">
+            <p>Cómo Ganar Mi Primer Millón de Dólares en MLM en 18 Meses</p>
+          </li>
+          <li class="bonos">
+            <p>25% de comisiones de cada venta que refieras.</p>
+          </li>
+        </ul>          
       </div>
     </div>
   </div>
-  <div id="master-footer">
-    <div class="container">
-      <p>Los ejemplos de ingresos presentados no son una garantía de ingresos. En cambio, están diseñados para que te hagas una idea de lo que es posible. El éxito en este negocio - como con cualquier cosa, requiere de un liderazgo, trabajo duro y dedicación. Si no estás dispuesto a hacer eso, no puedes esperar para obtener los mismos resultados.</p>
-      <p clas="text-center">
-        <ul class="foot-links">
-          <li><%= link_to "Terminos y Condiciones",terms_conditions_path %></li>
-          <li><%= link_to "Política de Privacidad",terms_conditions_path(@terms_conditions, :anchor => "privacy-policy") %></li>
-        </ul>
-      </p>
-    </div>
+</div>
+<div id="master-footer">
+  <div class="container">
+    <p>Los ejemplos de ingresos presentados no son una garantía de ingresos. En cambio, están diseñados para que te hagas una idea de lo que es posible. El éxito en este negocio - como con cualquier cosa, requiere de un liderazgo, trabajo duro y dedicación. Si no estás dispuesto a hacer eso, no puedes esperar para obtener los mismos resultados.</p>
+    <p clas="text-center">
+      <ul class="foot-links">
+        <li><%= link_to "Terminos y Condiciones",terms_conditions_path %></li>
+        <li><%= link_to "Política de Privacidad",terms_conditions_path(@terms_conditions, :anchor => "privacy-policy") %></li>
+      </ul>
+    </p>
   </div>
-
-
-
+</div>
