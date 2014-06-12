@@ -99,7 +99,7 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <%= f.label :plan_id, "Elige tu Plan", :class => 'sr-only' %>
-                          <%= f.collection_select :plan_id, Plan.all, :id, lambda {|x| "#{t('plans.'+x.name)} ($#{x.price})" } %>
+                          <%= f.collection_select :plan_id, Plan.all, :id, lambda {|x| "#{x.name} ($#{x.price})" } %>
                         </div>
                       </div>
                     </div>
