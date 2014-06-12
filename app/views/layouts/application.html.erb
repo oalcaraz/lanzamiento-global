@@ -9,7 +9,69 @@
 </head>
 <body>
 
-<%= yield %>
+  <!-- Main Container Fluid -->
+  <div class="container-fluid menu-hidden">
+        
+    <!-- Content -->
+    <div id="content">
+
+      <div class="navbar hidden-print main navbar-default" role="navigation">
+  <div class="user-action user-action-btn-navbar pull-right">
+    <button class="btn btn-sm btn-navbar btn-inverse btn-stroke hidden-lg hidden-md"><i class="fa fa-bars fa-2x"></i></button>
+  </div>
+  <%= link_to raw('<span class="hidden-xs hidden-sm inline-block"><span>Lanzamiento</span>Global</span>'), dashboard_path, :class => 'logo' %>
+  
+  <ul class="main pull-right">
+    <li class="hidden-xs hidden-sm"><input type="text" value="<%= user_landing_url(current_account.username) %>" class="my-refer-url" /> </li>
+    <li class="hidden-xs">Usuarios referidos:  <strong class="text-primary">24</strong></li>
+    <li class="dropdown username hidden-xs ">
+      <a href="" class="dropdown-toggle" data-toggle="dropdown"><img src="<%= current_account.avatar %>" class="img-circle" alt="Profile" /> <%= current_account.firstname %> <span class="caret"></span></a>
+
+      <ul class="dropdown-menu pull-right">
+        <li><%= link_to raw("<i></i> Mi Cuenta"), edit_account_registration_path, :class => 'glyphicons user' %></li>
+        <li><%= link_to raw("<i></i> Salir"), destroy_account_session_path, method: :delete, :class => 'glyphicons lock' %></li>
+      </ul>
+    </li>
+  </ul> 
+</div>
+<!-- // END navbar -->
+
+  <%= yield %>
+  
+      <div id="footer" class="hidden-print">
+      
+      <!--  Copyright Line -->
+      <div class="copy">&copy; 2014 - LanzamientoGlobal</div>
+      <!--  End Copyright Line -->
+  
+    </div>
+    
+    <!-- // Footer END -->
+    
+  </div>
+  <!-- // Main Container Fluid END -->
+  
+
+  <!-- Global -->
+  <script data-id="App.Config">
+      var App = {};        var basePath = '',
+          commonPath = '../assets/',
+          rootPath = '../',
+          DEV = false,
+          componentsPath = '../assets/components/';
+
+      var primaryColor = '#c72a25',
+          dangerColor = '#b55151',
+          successColor = '#609450',
+          infoColor = '#4a8bc2',
+          warningColor = '#ab7a4b',
+          inverseColor = '#45484d';
+
+      var themerPrimaryColor = primaryColor;
+
+  </script>
+
+
 
 </body>
 </html>

@@ -1,3 +1,5 @@
+require 'digest/md5'
+
 class Account < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -12,5 +14,10 @@ class Account < ActiveRecord::Base
   validates :username, length: { in: 3..20 }
   validates :username, uniqueness: { case_sensitive: false }
   validates :username, format: { with: /\A[[:alnum:]]+\z/ }
+  
+  
+  def avatar
+    'http://www.gravatar.com/avatar/' + Digest::MD5.hexdigest(self.email.downcase) + '?s=35'
+  end
 end
  
