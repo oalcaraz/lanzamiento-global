@@ -50,3 +50,9 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Postgresql
 gem 'pg'
+
+group :production do
+  gem 'rails_12factor'
+
+  gem 'newrelic_rpm'
+end
