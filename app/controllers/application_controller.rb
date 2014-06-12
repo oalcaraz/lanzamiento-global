@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
   
   before_filter :set_username, unless: :account_signed_in?
 
+
   def after_sign_in_path_for(resource)
-    #dashboard_path
-    super
+    dashboard_path
   end
 
   def configure_permitted_parameters

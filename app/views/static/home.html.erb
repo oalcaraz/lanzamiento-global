@@ -39,7 +39,9 @@
       <div class="bottom-part">
         <p class="crossed-price"><strike>2,606 d&oacute;lares</strike></p>
         <p class="price"><strong>$500 d&oacute;lares</strong></p>
-        <%= link_to 'Empieza Ahora', new_account_registration_path(:basico, @username), :class => 'btn btn-lg btn-default' %>   
+        <% if !account_signed_in? %>
+          <%= link_to 'Empieza Ahora', new_account_registration_path(:basico, @username), :class => 'btn btn-lg btn-default' %>
+        <% end %>
       </div>
     </div>
     <div class="col-sm-4 column-precio professional">
@@ -59,7 +61,9 @@
       <div class="bottom-part">
         <p class="crossed-price"><strike>5,102 d&oacute;lares</strike></p>
         <p class="price"><strong>$1,000 d&oacute;lares</strong></p>
-        <%= link_to 'Empieza Ahora', new_account_registration_path(:profesional, @username), :class => 'btn btn-lg btn-default' %>   
+        <% if !account_signed_in? %>
+          <%= link_to 'Empieza Ahora', new_account_registration_path(:profesional, @username), :class => 'btn btn-lg btn-default' %>
+        <% end %>
       </div>
     </div>
     <div class="col-sm-4 column-precio artista">
@@ -79,7 +83,9 @@
       <div class="bottom-part">
         <p class="crossed-price"><strike>6,599 d&oacute;lares</strike></p>
         <p class="price"><strong>$1,500 d&oacute;lares</strong></p>
-        <%= link_to 'Empieza Ahora', new_account_registration_path(:artista, @username), :class => 'btn btn-lg btn-default' %>   
+        <% if !account_signed_in? %>
+          <%= link_to 'Empieza Ahora', new_account_registration_path(:artista, @username), :class => 'btn btn-lg btn-default' %>
+        <% end %>
       </div>
     </div>
   </div>
