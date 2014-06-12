@@ -27,8 +27,19 @@
       <div class="col-sm-8">
 
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
+            <% if resource.errors.any? %>
+            <div class="alert alert-danger">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong><%=t 'errors.review_the_following_errors' %></strong>
+              <ul>
+              <% resource.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
           <%= f.hidden_field :refer_id %>
+          <%= params %>
           <div class="carousel slide" id="lgstep-container">
             <div class="carousel-inner">
               <div class="item active">
@@ -108,7 +119,8 @@
                     <div class="row">
                       <div class="col-sm-6 col-sm-offset-6">
                         <div class="continue-container">
-                          <div><%= f.submit "Sign up" %></div>
+                          <div><%= f.submit "Sign up", :class => 'btn btn-lg btn-block btn-success', :id =>
+                          'btn-crea' %></div>
                         </div>
                       </div>
                     </div>
