@@ -2493,16 +2493,16 @@ div.glyphicons.glyphicon-primary i:before {
 .bwizard-steps a:hover {
   text-decoration: none;
 }
-.bwizard-steps.clickable li:not (.active ) {
+.bwizard-steps.clickable li {
   cursor: pointer;
 }
-.bwizard-steps.clickable li:hover:not (.active ) {
+.bwizard-steps.clickable li:hover {
   background: #ccc;
 }
-.bwizard-steps.clickable li:hover:not (.active ):after {
+.bwizard-steps.clickable li:hover:after {
   border-left-color: #ccc;
 }
-.bwizard-steps.clickable li:hover:not (.active ) a {
+.bwizard-steps.clickable li:hover a {
   color: #08c;
 }
 @media (max-width: 991px) {

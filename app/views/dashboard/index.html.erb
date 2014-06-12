@@ -14,43 +14,50 @@
         <!-- End Category Heading -->
         
         <!-- Category Listing -->
-                        <div class="bg-gray-hover overflow-hidden">
-          <div class="row innerAll half  border-bottom">
-            <div class="media">
-              <a href="" class="pull-left"><img src="<%= @parent.avatar %>" alt="" class="img-circle" ></a>
-              <div class="media-body">
-                  <%= @parent.username %>
-              </div>
-              <div class="clearfix"></div>
+        <% if @parent.present? %>
+          <div class="bg-gray-hover overflow-hidden">
+            <div class="row innerAll half  border-bottom">
+              <div class="media">
+                <a href="" class="pull-left"><img src="<%= @parent.avatar %>" alt="" class="img-circle" ></a>
+                <div class="media-body">
+                    <%= @parent.username %>
+                </div>
+                <div class="clearfix"></div>
 
+              </div>
             </div>
           </div>
-        </div>
-                <div class="bg-gray-hover overflow-hidden">
-          <div class="row innerAll half  border-bottom">
-            <div class="media">
-              <a href="" class="pull-left"><img src="<%= @parent2.avatar %>" alt="" class="img-circle" ></a>
-              <div class="media-body">
-                <%= @parent2.username if @parent2.present? %>
-              </div>
-              <div class="clearfix"></div>
+        <% end %>
+        
+        <% if @parent2.present? %>
+          <div class="bg-gray-hover overflow-hidden">
+            <div class="row innerAll half  border-bottom">
+              <div class="media">
+                <a href="" class="pull-left"><img src="<%= @parent2.avatar %>" alt="" class="img-circle" ></a>
+                <div class="media-body">
+                  <%= @parent2.username if @parent2.present? %>
+                </div>
+                <div class="clearfix"></div>
 
+              </div>
             </div>
           </div>
-        </div>
-                <div class="bg-gray-hover overflow-hidden">
-          <div class="row innerAll half  border-bottom">
-            <div class="media">
-              <a href="" class="pull-left"><img src="<%= @parent2.avatar %>" alt="" class="img-circle" ></a>
-              <div class="media-body">
-                <%= @parent2.username if @parent2.present? %>
-              </div>
-              <div class="clearfix"></div>
+        <% end %>
+        
+        <% if @parent3.present? %>
+          <div class="bg-gray-hover overflow-hidden">
+            <div class="row innerAll half  border-bottom">
+              <div class="media">
+                <a href="" class="pull-left"><img src="<%= @parent3.avatar %>" alt="" class="img-circle" ></a>
+                <div class="media-body">
+                  <%= @parent3.username if @parent3.present? %>
+                </div>
+                <div class="clearfix"></div>
 
+              </div>
             </div>
           </div>
-        </div>
-                <!-- // END Category Listing -->
+        <% end %>
 
 
       </div>
