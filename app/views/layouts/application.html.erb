@@ -3,7 +3,7 @@
 <head>
   <title>Lanzamientoglobal</title>
   <%= stylesheet_link_tag  'theme', media: 'all', 'data-turbolinks-track' => true %>
-  <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -22,7 +22,7 @@
   <%= link_to raw('<span class="hidden-xs hidden-sm inline-block"><span>Lanzamiento</span>Global</span>'), dashboard_path, :class => 'logo' %>
   
   <ul class="main pull-right">
-    <li class="hidden-xs hidden-sm"><input type="text" value="<%= user_landing_url(current_account.username) %>" class="my-refer-url" /> </li>
+    <li class="hidden-xs hidden-sm">Mi enlace de afiliado: <input type="text" value="<%= user_landing_url(current_account.username) %>" class="my-refer-url" /> </li>
     <li class="hidden-xs">Usuarios referidos:  <strong class="text-primary">24</strong></li>
     <li class="dropdown username hidden-xs ">
       <a href="" class="dropdown-toggle" data-toggle="dropdown"><img src="<%= current_account.avatar %>" class="img-circle" alt="Profile" /> <%= current_account.firstname %> <span class="caret"></span></a>
