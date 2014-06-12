@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   root to: 'static#home'
-  get 'r/:username' => 'static#home'
+  get 'r/:username' => 'static#home', as: :user_landing
   
   
   devise_for :accounts, :skip => [:registration]
@@ -10,13 +10,14 @@ Rails.application.routes.draw do
     get 'register/:plan/:username' => 'registrations#new', as: :new_account_registration
     #get ':username/register' => 'registrations#new', as: :registration
     post 'register' => 'registrations#create', as: :account_registration
+    get 'accounts/edit' => 'registrations#edit', as: :edit_account_registration
   end
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
   authenticate(:account) do
-    #get 'dashboard' => 'dashboard#index', as: :dashboard
+    get 'dashboard' => 'dashboard#index', as: :dashboard
   end
   
   # Static pages

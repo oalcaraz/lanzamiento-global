@@ -107,12 +107,12 @@ Geneologia:
         </div>
                 <div class="bg-gray-hover overflow-hidden">
           <div class="row innerAll half  border-bottom">
-          <%= @parent2.username %>
+          <%= @parent2.username if @parent2.present? %>
           </div>
         </div>
                 <div class="bg-gray-hover overflow-hidden">
           <div class="row innerAll half  ">
-          <%= @parent3.username %>
+          <%= @parent3.username if @parent3.present? %>
           </div>
         </div>
                 <!-- // END Category Listing -->
