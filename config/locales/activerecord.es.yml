@@ -1,0 +1,28 @@
+es:
+  activerecord:
+    errors:
+      models:
+        account:
+          attributes:
+            current_password:
+              blank: "La contraseña actual no fue completada"
+
+            password:
+              too_short: "La contraseña debe tener al menos 8 caracteres"
+
+            email:
+              blank: "El campo de Email no fue completado"
+              taken: "El email elegido no se encuentra disponible"
+              invalid: "El email es invalido"
+            username:
+              invalid: "Nombre de usuario inválido"
+              too_short: "Nombre de usurio demasiado corto"
+              taken: "Nombre de usuario no disponible."
+
+            password:
+              too_short: "La contraseña ingresada es demasiado corta (mínimo 8 caracteres)."
+            password_confirmation:
+              confirmation: "debe ser completada."
+
+            confirmation_token:
+              invalid: "El código de confirmación es inválido."
