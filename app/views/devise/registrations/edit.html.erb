@@ -1,199 +1,68 @@
-
-  
-  <!-- Main Container Fluid -->
-  <div class="container-fluid menu-hidden">
-        
-    <!-- Content -->
-    <div id="content">
-
-      <div class="navbar hidden-print main navbar-default" role="navigation">
-  <div class="user-action user-action-btn-navbar pull-right">
-    <button class="btn btn-sm btn-navbar btn-inverse btn-stroke hidden-lg hidden-md"><i class="fa fa-bars fa-2x"></i></button>
-  </div>
-  <a href="index.html" class="logo">
-    <img src="../assets/images/logo/logo.jpg" width="32" alt="SMART" />
-    <span class="hidden-xs hidden-sm inline-block"><span>mosaic</span>pro</span>
-  </a>
-  <ul class="main pull-left hidden-xs ">
-    <li class="dropdown notif notifications hidden-xs">
-      <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <span class="badge badge-danger">5</span></a>
-      <ul class="dropdown-menu chat media-list">
-        <li class="media">
-              <a class="pull-left" href="#"><img class="media-object thumb" src="../assets/images/people/100/15.jpg" alt="50x50" width="50" /></a>
-          <div class="media-body">
-                <span class="label label-default pull-right">5 min</span>
-                  <h5 class="media-heading hidden-xs">Adrian D.</h5>
-                  <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-        </li>
-            <li class="media">
-                <a class="pull-left" href="#"><img class="media-object thumb" src="../assets/images/people/100/16.jpg" alt="50x50" width="50" /></a>
-          <div class="media-body">
-                  <span class="label label-default pull-right">2 days</span>
-                  <h5 class="media-heading">Jane B.</h5>
-                  <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-            </li>
-          <li class="media">
-                <a class="pull-left" href="#"><img class="media-object thumb" src="../assets/images/people/100/17.jpg" alt="50x50" width="50" /></a>
-              <div class="media-body">
-            <span class="label label-default pull-right">3 days</span>
-                  <h5 class="media-heading">Andrew M.</h5>
-                  <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-            </li>
-            <li><a href="#" class="btn btn-primary"><i class="fa fa-list"></i> <span>View all messages</span></a></li>
-          </ul>
-    </li>
-    <li class="notifications">
-      <a href="user/projects.html"><i class="fa fa-clock-o"></i> <span class="badge badge-warning">7</span></a>
-    </li>
-    <li class="notifications">
-      <a href="user.html" ><i class="fa fa-user"></i> <span class="badge badge-info">2</span></a>
-    </li>
-  </ul>
-  <ul class="main pull-right">
-    <li class="hidden-xs hidden-sm"><a href="#modal-task" class="btn btn-info" data-toggle="modal">Create Task  <i class="fa fa-fw icon-compose"></i></a></li>
-    <li class="hidden-xs">Completed Tasks:  <strong class="text-primary">24</strong></li>
-    <li class="dropdown username hidden-xs ">
-      <a href="" class="dropdown-toggle" data-toggle="dropdown"><img src="../assets/images/people/35/22.jpg" class="img-circle" alt="Profile" /> Adrian D. <span class="caret"></span></a>
-
-      <ul class="dropdown-menu pull-right">
-        <li class="active"><a href="user.html" class="glyphicons user"><i></i> Account</a></li>
-        <li><a href="user/messages.html" class="glyphicons envelope"><i></i>Messages</a></li>
-        <li><a href="user/projects.html" class="glyphicons settings"><i></i>Projects</a></li>
-        <li><a href="login.html" class="glyphicons lock no-ajaxify"><i></i>Logout</a></li>
-        </ul>
-    </li>
-  </ul> 
-</div>
-<!-- // END navbar -->
-
-
-
-
-
-<div class="innerLR">
-    <div class="innerT">
-        <div class="pull-right">
-            <a class="btn btn-inverse"><i class="fa fa-envelope"></i> Send Message</a>
-            <a class="btn btn-default filled"><i class="fa fa-download"></i></a>
-        </div>
-        <div class="media">
-
-            <img src="../assets/images/people/80/22.jpg" class="pull-left thumbnail" alt="Profile" />
-
-            <div class="media-body innerAll half">
-                <h3>
-                    <a href="#" class="text-regular ">Adrian Demian</a> <span class="lead text-muted">@short-url</span>
-                </h3>
-
-                <a class="btn btn-default filled text-muted-dark" href="#">Logout <i class="fa fa-sign-out fa-fw"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="widget widget-tabs-content widget-tabs-responsive widget-none">
-
-        <!-- Tabs Heading -->
-<div class="widget-head bg-background text-center">
-    <ul>
-        <li class="active">
-            <a class="glyphicons lock" href="user.html">
-                <i></i>Account Details
-            </a>
-        </li>
-        <li>
-            <a class="glyphicons clock" href="user/projects.html">
-                <i></i>Projects &amp; Tasks
-            </a>
-        </li>
-        <li>
-            <a class="glyphicons envelope" href="user/messages.html">
-                <i></i>Messages
-            </a>
-        </li>
-        <li>
-            <a class="glyphicons share_alt" href="user/history.html">
-                <i></i>History Log
-            </a>
-        </li>
-    </ul>
-</div>
-<!-- // Tabs Heading END -->
-
 <div class="widget-body">
 
-    <div class="row innerAll inner-2x">
-        <div class="col-sm-6">
-            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-            <%= devise_error_messages! %>
-                <div class="form-group">
-                    <%= f.label :firstname %>
-                     <%= f.text_field :firstname, :id => 'lastname', :class => 'form-control' %>
-                </div>
+  <div class="row innerAll inner-2x">
+    <div class="col-sm-6">
+      <%= form_for(resource, as: resource_name, url: edit_account_registration_patch_path, html: { method: :put }) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="form-group">
+              <%= f.label :firstname %>
+               <%= f.text_field :firstname, :id => 'lastname', :class => 'form-control' %>
+          </div>
 
-                <div class="form-group">
-                    <%= f.label :lastname %>
-                     <%= f.text_field :lastname, :id => 'lastname', :class => 'form-control' %>
-                </div>
+          <div class="form-group">
+              <%= f.label :lastname %>
+               <%= f.text_field :lastname, :id => 'lastname', :class => 'form-control' %>
+          </div>
 
-                <div class="form-group">
-                    <%= f.label :username %>
-                     <%= f.text_field :username, :id => 'username', :class => 'form-control' %>
-                </div>
+          <div class="form-group">
+              <%= f.label :username %>
+               <%= f.text_field :username, :id => 'username', :class => 'form-control' %>
+          </div>
 
-                <div class="form-group">
-                    <%= f.label :phone %>
-                    <%= f.text_field :phone, :id => 'phone', :class => 'form-control' %>
-                </div>
+          <div class="form-group">
+              <%= f.label :phone %>
+              <%= f.text_field :phone, :id => 'phone', :class => 'form-control' %>
+          </div>
 
-                <div class="form-group">
-                    <%= f.label :email %>
-                    <%= f.email_field :email, :id => 'email', :class => 'form-control' %>
-                </div>
+          <div class="form-group">
+              <%= f.label :email %>
+              <%= f.email_field :email, :id => 'email', :class => 'form-control' %>
+          </div>
 
-                <div class="form-group">
-                    <%= f.label :address %>
-                     <%= f.text_field :address, :id => 'address', :class => 'form-control' %>
-                </div>
+          <div class="form-group">
+              <%= f.label :address %>
+               <%= f.text_field :address, :id => 'address', :class => 'form-control' %>
+          </div>
 
-                <div class="form-group">
-                    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
-                    <%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
-                </div>
+          <div class="form-group">
+              <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+              <%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
+          </div>
 
-                <div class="form-group">
-                    <%= f.label :password_confirmation %>
-                    <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %>
-                </div>
+          <div class="form-group">
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %>
+          </div>
 
-                <div class="form-group">
-                    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
-                    <%= f.password_field :current_password, autocomplete: "off", :class => 'form-control' %>
-                </div>
+          <div class="form-group">
+              <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+              <%= f.password_field :current_password, autocomplete: "off", :class => 'form-control' %>
+          </div>
 
-                <div class="checkbox">
-                    <label for="notify">
-                        <input id="notify" checked="checked" name="notify" type="checkbox">
-                        Email me with updates about current projects.
-                    </label>
-                </div>
-
-                <div class="separator"></div>
-                  <div class="form-group">
-                    <%= f.submit "Update", :class => 'btn btn-primary' %>
-                  </div>
-            <% end %>
-        </div>
-        <div class="col-sm-6">
-            <div class="well">
-                <h4>Additional Information</h4>
-                <div class="separator"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias aspernatur assumenda at commodi dolorem eos eum exercitationem facere ipsum mollitia nemo perspiciatis quaerat qui quidem, quod repellat repudiandae sed veritatis voluptate? Eos necessitatibus non rem repudiandae similique vero voluptatem?</p>
-            </div>
+          <div class="separator"></div>
+            <div class="form-group">
+              <%= f.submit "Update", :class => 'btn btn-primary' %>
+          </div>
+        <% end %>
+    </div>
+    <div class="col-sm-6">
+        <div class="well">
+            <h4>Additional Information</h4>
+            <div class="separator"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias aspernatur assumenda at commodi dolorem eos eum exercitationem facere ipsum mollitia nemo perspiciatis quaerat qui quidem, quod repellat repudiandae sed veritatis voluptate? Eos necessitatibus non rem repudiandae similique vero voluptatem?</p>
         </div>
     </div>
+  </div>
 
 </div>
     </div>

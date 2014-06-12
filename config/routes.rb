@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     #get ':username/register' => 'registrations#new', as: :registration
     post 'register' => 'registrations#create', as: :account_registration
     get 'accounts/edit' => 'registrations#edit', as: :edit_account_registration
+    patch 'accounts' => 'accounts/registrations#update', as: :edit_account_registration_patch
   end
   
   devise_for :admin_users, ActiveAdmin::Devise.config
