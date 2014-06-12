@@ -342,6 +342,9 @@
   position: relative;
   overflow: hidden;
 }
+.bg-gray-hover {
+  padding-left: 15px;
+}
 .containerBg {
   background: #e1e0de;
 }

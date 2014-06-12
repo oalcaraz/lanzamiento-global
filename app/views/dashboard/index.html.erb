@@ -93,7 +93,6 @@ Geneologia:
 
         <!-- Category Heading -->
         <div class="widget-head">
-          <a href="#" class="btn btn-xs strong btn-inverse pull-right"><i class="fa fa-plus fa-fw"></i> New Thread</a>
           <h4 class="margin-none">Padres</h4>
           <div class="clearfix"></div>
         </div>
@@ -102,7 +101,17 @@ Geneologia:
         <!-- Category Listing -->
                         <div class="bg-gray-hover overflow-hidden">
           <div class="row innerAll half  border-bottom">
-          <%= @parent.username %>
+            <div class="media">
+              <a href="" class="pull-left"><%= @parent.avatar %></a>
+              <div class="media-body">
+                  <%= @parent.username %>
+              </div>
+              <div class="clearfix"></div>
+              <a href="user.html" class="btn btn-xs btn-inverse "><i class="fa fa-user"></i></a>
+              <a href="user/projects.html" class="btn btn-xs btn-inverse "><i class="fa fa-clock-o"></i></a>
+              <a href="user/messages.html" class="btn btn-xs btn-inverse "><i class="fa fa-envelope"></i></a>
+
+            </div>
           </div>
         </div>
                 <div class="bg-gray-hover overflow-hidden">
@@ -124,7 +133,6 @@ Geneologia:
 
         <!-- Category Heading -->
                 <div class="widget-head">
-          <a href="#" class="btn btn-xs strong btn-inverse pull-right"><i class="fa fa-plus fa-fw"></i> New Thread</a>
           <h4 class="margin-none">Hijos</h4>
           <div class="clearfix"></div>
         </div>

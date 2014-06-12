@@ -341,6 +341,7 @@
 .overflow-hidden {
   position: relative;
   overflow: hidden;
+  padding-left: 15px;
 }
 .containerBg {
   background: #e1e0de;
