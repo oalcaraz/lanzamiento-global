@@ -1,0 +1,66 @@
+<div class="row innerT inner-2x">
+    <div class="col-md-4 col-md-offset-4 innerT inner-2x">
+        <div class="innerT inner-2x">
+          <div class="widget innerLR innerB margin-none">
+              <h3 class="innerTB text-center">Confirmar Cuenta</h3>
+              <div class="lock-container">
+                  <div class=" text-center">
+                    <% unless flash[:error].blank? %>
+                      <div class="alert alert-danger text-center">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <p><%= raw flash[:error] %></p>
+                      </div>
+                    <% end %>
+                    <%= form_tag process_credit_card_path, method: :post, id: 'credit_card_form' do %>
+                      <input type="hidden" id="stripe_token" name="stripe_token">
+                      <p>Por favor confirma tu tarjeta de crédito para dar de alta el plan que has elegido:</p>
+                      <div class="innerAll">
+                          <h4 style="display:inline;">Plan:</h4>
+                          <span><%= t current_account.plan.name %></span>
+                          <div class="innerB half"></div>
+                          <h4 style="display:inline;">Precio:</h4>  
+                          <span>$<%= current_account.plan.price %></span>
+                      </div>
+                      <div class="innerT half">
+                          <%= button_to 'Pagar Ahora', '#', id: 'stripe_button', :class => "btn btn-primary" %>
+                      </div>
+                      <% end %>
+                  </div>
+
+              </div>
+          </div>
+          <% if false %>
+          <div class="text-right innerT half register-links">
+            <%= link_to 'Cambiar de plan', account_plans_path %><br>
+            <%= link_to 'Hacer el pago más tarde', dashboard_path %>
+          </div>
+          <% end %>
+      </div>
+
+    </div>
+</div>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<script>
+  var handler = StripeCheckout.configure({
+    key: '<%= Rails.configuration.stripe_public_key %>',
+    image: '<%= asset_url "ricolife_square.png" %>',
+    panelLabel: 'Pagar {{amount}}',
+    token: function(token, args) {
+      $('#stripe_token').val(token.id);
+      $('#credit_card_form').submit();
+    }
+  });
+
+  $('#stripe_button').on('click', function(e) {
+    // Open Checkout with further options
+    handler.open({
+      name: 'RicoLife',
+      description: 'Plan <%= t current_account.plan.name %> ($<%= current_account.plan.price %>)',
+      amount: <%= current_account.plan.price.to_i * 100 %>,
+      email: '<%= current_account.email %>'
+    });
+    e.preventDefault();
+  });
+</script>
