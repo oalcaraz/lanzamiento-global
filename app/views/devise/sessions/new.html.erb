@@ -1,261 +1,32 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7 paceSimple"> <![endif]-->
-<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8 paceSimple"> <![endif]-->
-<!--[if IE 8]>    <html class="ie lt-ie9 paceSimple"> <![endif]-->
-<!--[if gt IE 8]> <html class="ie paceSimple"> <![endif]-->
-<!--[if !IE]><!--><html class="paceSimple"><!-- <![endif]-->
-<head>
-    <title>SMART (v1.0.0-rc1)</title>
-
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-
-</head>
-<body class=" loginWrapper">
-  
-  <!-- Main Container Fluid -->
-  <div class="container-fluid menu-hidden">
-    
-        
-    <!-- Content -->
-    <div id="content">
-
-      <div class="navbar hidden-print main navbar-default" role="navigation">
-  <div class="user-action user-action-btn-navbar pull-right">
-    <button class="btn btn-sm btn-navbar btn-inverse btn-stroke hidden-lg hidden-md"><i class="fa fa-bars fa-2x"></i></button>
-  </div>
-  <a href="index.html" class="logo">
-    <img src="../assets/images/logo/logo.jpg" width="32" alt="SMART" />
-    <span class="hidden-xs hidden-sm inline-block"><span>mosaic</span>pro</span>
-  </a>
-  <ul class="main pull-left hidden-xs ">
-    <li class="dropdown notif notifications hidden-xs">
-      <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <span class="badge badge-danger">5</span></a>
-      <ul class="dropdown-menu chat media-list">
-        <li class="media">
-              <a class="pull-left" href="#"><img class="media-object thumb" src="../assets/images/people/100/15.jpg" alt="50x50" width="50" /></a>
-          <div class="media-body">
-                <span class="label label-default pull-right">5 min</span>
-                  <h5 class="media-heading hidden-xs">Adrian D.</h5>
-                  <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-        </li>
-            <li class="media">
-                <a class="pull-left" href="#"><img class="media-object thumb" src="../assets/images/people/100/16.jpg" alt="50x50" width="50" /></a>
-          <div class="media-body">
-                  <span class="label label-default pull-right">2 days</span>
-                  <h5 class="media-heading">Jane B.</h5>
-                  <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-            </li>
-          <li class="media">
-                <a class="pull-left" href="#"><img class="media-object thumb" src="../assets/images/people/100/17.jpg" alt="50x50" width="50" /></a>
-              <div class="media-body">
-            <span class="label label-default pull-right">3 days</span>
-                  <h5 class="media-heading">Andrew M.</h5>
-                  <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-            </li>
-            <li><a href="#" class="btn btn-primary"><i class="fa fa-list"></i> <span>View all messages</span></a></li>
-          </ul>
-    </li>
-    <li class="notifications">
-      <a href="user/projects.html"><i class="fa fa-clock-o"></i> <span class="badge badge-warning">7</span></a>
-    </li>
-    <li class="notifications">
-      <a href="user.html" ><i class="fa fa-user"></i> <span class="badge badge-info">2</span></a>
-    </li>
-  </ul>
-  <ul class="main pull-right">
-    <li class="hidden-xs hidden-sm"><a href="#modal-task" class="btn btn-info" data-toggle="modal">Create Task  <i class="fa fa-fw icon-compose"></i></a></li>
-    <li class="hidden-xs">Completed Tasks:  <strong class="text-primary">24</strong></li>
-    <li class="dropdown username hidden-xs ">
-      <a href="" class="dropdown-toggle" data-toggle="dropdown"><img src="../assets/images/people/35/22.jpg" class="img-circle" alt="Profile" /> Adrian D. <span class="caret"></span></a>
-
-      <ul class="dropdown-menu pull-right">
-        <li><a href="user.html" class="glyphicons user"><i></i> Account</a></li>
-        <li><a href="user/messages.html" class="glyphicons envelope"><i></i>Messages</a></li>
-        <li><a href="user/projects.html" class="glyphicons settings"><i></i>Projects</a></li>
-        <li><a href="login.html" class="glyphicons lock no-ajaxify"><i></i>Logout</a></li>
-        </ul>
-    </li>
-  </ul> 
-</div>
-<!-- // END navbar -->
-
-
-
-
-
 <div class="row innerT inner-2x">
     <div class="col-md-4 col-md-offset-4 innerT inner-2x">
         <div class="innerT inner-2x">
-                <div class="widget innerLR innerB margin-none">
-                    <h3 class="innerTB text-center">Ingresar al sistema</h3>
-                    <div class="lock-container">
-                        <div class=" text-center">
-                        	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="widget innerLR innerB margin-none">
+              <h3 class="innerTB text-center">Ingresar al sistema</h3>
+              <div class="lock-container">
+                  <div class=" text-center">
+                  	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-                            <div class="innerAll">
-                                <%= f.email_field :email, autofocus: true, :class => "form-control text-center bg-gray", :placeholder => "Email" %>
-                                <div class="innerB half"></div>
-                                <%= f.password_field :password, autocomplete: "off", :class => "form-control text-center bg-gray", :placeholder => "Contraseña" %>
-                            </div>
-                              <% if devise_mapping.rememberable? -%>
-							    <div><%= f.check_box :remember_me %> <%= f.label :remember_me, "Recordarme" %></div>
-							  <% end -%>
-                            <div class="innerT half">
-                                <%= f.submit "Ingresar", :class => "btn btn-primary" %>
-                            </div>
-                            <% end %>
-                        </div>
+                      <div class="innerAll">
+                          <%= f.email_field :email, autofocus: true, :class => "form-control text-center bg-gray", :placeholder => "Email" %>
+                          <div class="innerB half"></div>
+                          <%= f.password_field :password, autocomplete: "off", :class => "form-control text-center bg-gray", :placeholder => "Contraseña" %>
+                      </div>
+                        <% if devise_mapping.rememberable? -%>
+				    <div><%= f.check_box :remember_me %> <%= f.label :remember_me, "Recordarme" %></div>
+				  <% end -%>
+                      <div class="innerT half">
+                          <%= f.submit "Ingresar", :class => "btn btn-primary" %>
+                      </div>
+                      <% end %>
+                  </div>
 
-                    </div>
-                </div>
-                <div class="text-right innerT half">
-                    <%= render "devise/shared/links" %>
-                </div>
-            </div>
+              </div>
+          </div>
+          <div class="text-right innerT half">
+              <%= render "devise/shared/links" %>
+          </div>
+      </div>
 
     </div>
 </div>
-
-
-<!-- CREATE TASK MODAL -->
-<!-- Modal -->
-<div class="modal fade" id="modal-task">
-
-    <div class="modal-dialog">
-        <div class="modal-content bg-white">
-            <!-- Modal body -->
-            <div class="modal-body padding-none ">
-
-                <form class="form-horizontal " role="form">
-
-                        <div class="innerLR innerT">
-                            <div class="form-group">
-                                <label for="to" class="col-sm-2 control-label">Task:</label>
-                                <div class="col-sm-10">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="to">
-                                        <div class="input-group-btn">
-                                            <button type="button" data-toggle="collapse" data-target="#cc" class="btn btn-default">Schedule <span class="caret"></span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="cc" class="collapse">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">Starts:</label>
-                                    <div class="col-sm-10">
-                                        <div class="input-group date datepicker2">
-    <input class="form-control" type="text" value="14 February 2013" />
-    <span class="input-group-addon"><i class="fa fa-th"></i></span>
-</div>
-
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">Ends:</label>
-                                    <div class="col-sm-10">
-                                        <div class="input-group date datepicker2">
-    <input class="form-control" type="text" value="14 February 2013" />
-    <span class="input-group-addon"><i class="fa fa-th"></i></span>
-</div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Milestone:</label>
-                                <div class="col-sm-6">
-                                    <select class="selectpicker">
-                                        <option>HTML Validation</option>
-                                        <option>User Interface Design</option>
-                                        <option>Update Bootstrap 3.2</option>
-                                    </select>
-                                </div>
-
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Project:</label>
-                                <div class="col-sm-6">
-                                    <select class="selectpicker">
-                                        <option>Project #1</option>
-                                        <option>Project #2</option>
-                                        <option>Project #3</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-
-
-                    <div class="innerAll bg-white">
-                        <textarea class="notebook border-none form-control padding-none" rows="4" placeholder="Task description..."></textarea>
-                        <div class="clearfix"></div>
-                    </div>
-                </form>
-
-            </div>
-            <!-- // Modal body END -->
-
-            <div class="innerLR innerB text-right">
-                <a href="" class="btn btn-default"><i class="fa fa-times"></i> Cancel</a>
-                <a href="" class="btn btn-primary"><i class="fa  fa-check"></i> Submit</a>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-<!-- // Modal END -->
-
-
-
-
-<!-- // END MODAL -->
-
-    
-    </div>
-    <!-- // Content END -->
-    
-    <div class="clearfix"></div>
-    <!-- // Sidebar menu & content wrapper END -->
-    
-    <div id="footer" class="hidden-print">
-      
-      <!--  Copyright Line -->
-      <div class="copy">&copy; 2012 - 2014 - <a href="http://www.mosaicpro.biz">MosaicPro</a> - All Rights Reserved. <a href="http://themeforest.net/?ref=mosaicpro" target="_blank">Purchase SMART on ThemeForest</a> - Current version: v1.0.0-rc1 / <a target="_blank" href="../assets/../../CHANGELOG.txt?v=v1.0.0-rc1">changelog</a></div>
-      <!--  End Copyright Line -->
-  
-    </div>
-    
-    <!-- // Footer END -->
-    
-  </div>
-  <!-- // Main Container Fluid END -->
-  
-
-    <!-- Global -->
-    <script data-id="App.Config">
-        var App = {};        var basePath = '',
-            commonPath = '../assets/',
-            rootPath = '../',
-            DEV = false,
-            componentsPath = '../assets/components/';
-
-        var primaryColor = '#c72a25',
-            dangerColor = '#b55151',
-            successColor = '#609450',
-            infoColor = '#4a8bc2',
-            warningColor = '#ab7a4b',
-            inverseColor = '#45484d';
-
-        var themerPrimaryColor = primaryColor;
-
-            </script>
-</body>
-</html>
