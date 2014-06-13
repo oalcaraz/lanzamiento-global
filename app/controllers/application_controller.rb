@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   
   before_filter :set_username, unless: :account_signed_in?
 
+  rescue_from Exceptions::NotFound, with: :not_found
+
 
   def after_sign_in_path_for(resource)
     admin_user_signed_in? ? admin_dashboard_path : dashboard_path
@@ -24,5 +26,14 @@ class ApplicationController < ActionController::Base
   def set_username
     @username = params[:username] || Account.all.first.username
   end
+
+  def check_payment
+    redirect_to account_credit_card_path if account_signed_in? and current_account.stripe_charge.blank?
+  end
+
+  private
+    def not_found
+      render template: 'errors/not_found', status: 404
+    end
 
 end

@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   
   authenticate(:account) do
     get 'dashboard' => 'dashboard#index', as: :dashboard
+    get 'accounts/credit_card' => 'account#credit_card', as: :account_credit_card
+    post 'accounts/credit_card' => 'account#process_credit_card', as: :process_credit_card
   end
   
   # Static pages

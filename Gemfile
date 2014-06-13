@@ -51,6 +51,9 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 # Postgresql
 gem 'pg'
 
+# Stripe
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 group :production do
   gem 'rails_12factor'
 

@@ -1,6 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.stripe_api_key = 'sk_live_LmU1nMPaNZNuX4OILhBXbjg1'
+  config.stripe_public_key = 'pk_live_P2j8XUzHmIuBQcSTxZATOjwR'
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
