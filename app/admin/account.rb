@@ -10,6 +10,7 @@ ActiveAdmin.register Account do
     column :lastname
     column :address
     column :phone
+    column :refer
     actions
   end
 
